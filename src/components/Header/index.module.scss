@@ -1,8 +1,14 @@
-.Wrapper {
+.wrapper {
   background-color: #cccccc;
   display: flex;
 
   a {
+    margin: 16px;
+    padding: 16px;
+    border: 1px solid #333333;
+  }
+
+  button {
     margin: 16px;
     padding: 16px;
     border: 1px solid #333333;
