@@ -1,9 +1,0 @@
-#__next {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-
-  & > div:nth-child(2) {
-    flex-grow: 1;
-  }
-}
