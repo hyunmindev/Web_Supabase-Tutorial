@@ -8,7 +8,7 @@ import supabase from '@/configs/supabase';
 import styles from '@/styles/pages/home.module.scss';
 
 export default function Index() {
-  const { comments, isLoading: isCommentsLoading } = useComments();
+  const { comments, isLoading: isCommentsLoading, refetch } = useComments();
   const { user, isLoading: isUserLoading } = useUser();
   const [comment, setComment] = useState('');
 
@@ -25,6 +25,7 @@ export default function Index() {
       })
       .then(() => {
         setComment('');
+        refetch();
       });
   };
 
@@ -33,7 +34,7 @@ export default function Index() {
       <div>
         {comments.map(({ id, content }) => (
           <p
-            className={styles.content}
+            className={styles.comment}
             key={id}
           >
             {content}

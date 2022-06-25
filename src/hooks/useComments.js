@@ -6,7 +6,7 @@ export default function useComments() {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
+  const refetch = () => {
     supabase
       .from('comments')
       .select()
@@ -14,7 +14,10 @@ export default function useComments() {
         setComments(data);
         setIsLoading(false);
       });
+  };
+  useEffect(() => {
+    refetch();
   }, []);
 
-  return { comments, isLoading };
+  return { comments, isLoading, refetch };
 }
