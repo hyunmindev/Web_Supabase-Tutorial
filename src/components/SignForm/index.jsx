@@ -2,8 +2,8 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 export default function SignInForm({ onSubmit }) {
-  const [email, setEmail] = useState('als091212@naver.com');
-  const [password, setPassword] = useState('abcdef');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
     <>
