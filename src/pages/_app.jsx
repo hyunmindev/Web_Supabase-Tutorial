@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 
 import Header from '@/components/Header';
 
+import '../styles/reset.scss';
 import '../styles/global.scss';
 
 // eslint-disable-next-line react/prop-types

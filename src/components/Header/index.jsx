@@ -9,7 +9,7 @@ import { signOut } from '@/services';
 import styles from './index.module.scss';
 
 export default function Header() {
-  const user = useUser();
+  const { user, isLoading } = useUser();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function Header() {
       <Link href="/">
         <a>home</a>
       </Link>
-      {!isAuthenticated && (
+      {!isLoading && !isAuthenticated && (
         <>
           <Link href="/sign-in">
             <a>sign-in</a>
@@ -33,7 +33,7 @@ export default function Header() {
           </Link>
         </>
       )}
-      {isAuthenticated && (
+      {!isLoading && isAuthenticated && (
         <button
           type="button"
           onClick={mutate}
