@@ -1,6 +1,6 @@
 ## Supabase Tutorial
 
-
+Supabase + next.js + react-query
 
 ## 시작하기
 1. 다음 명령어 실행
